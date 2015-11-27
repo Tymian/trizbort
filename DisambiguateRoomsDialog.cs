@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010 by Genstein
+    Copyright (c) 2010-2015 by Genstein and Jason Lautzenheiser.
 
     This file is (or was originally) part of Trizbort, the Interactive Fiction Mapper.
 
@@ -41,9 +41,9 @@ namespace Trizbort
             m_thisRoomButton.Enabled = false;
         }
 
-        public void SetTranscriptContext(string roomName, string roomDescription)
+        public void SetTranscriptContext(string roomName, string roomDescription, string line)
         {
-            m_transcriptContextTextBox.Text = string.Format("{0}\n{1}", roomName, roomDescription).Replace("\r", string.Empty).Replace("\n", "\r\n");
+            m_transcriptContextTextBox.Text = string.Format("{0}\n{1}", line, roomDescription).Replace("\r", string.Empty).Replace("\n", "\r\n");
         }
 
         protected override void OnLoad(EventArgs e)

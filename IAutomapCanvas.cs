@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010 by Genstein
+    Copyright (c) 2010-2015 by Genstein and Jason Lautzenheiser.
 
     This file is (or was originally) part of Trizbort, the Interactive Fiction Mapper.
 
@@ -33,11 +33,11 @@ namespace Trizbort
         /// <summary>
         /// Find a room matching the given name and, if the given description isn't null, the given description.
         /// </summary>
-        Room FindRoom(string roomName, string roomDescription, RoomMatcher matcher);
+        Room FindRoom(string roomName, string roomDescription, string line, RoomMatcher matcher);
 
         Room CreateRoom(Room existing, string name);
 
-        Room CreateRoom(Room existing, AutomapDirection directionFromExisting, string name);
+        Room CreateRoom(Room existing, AutomapDirection directionFromExisting, string roomName, string line);
 
         void Connect(Room source, AutomapDirection directionFromSource, Room target);
 

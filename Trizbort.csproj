@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Trizbort</RootNamespace>
     <AssemblyName>Trizbort</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>Map.ico</ApplicationIcon>
     <FileUpgradeFlags>
@@ -46,6 +46,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -55,6 +56,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>71A85D8D5FAB2D322CD5C932858769833F7E8882</ManifestCertificateThumbprint>
@@ -66,14 +68,20 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PdfSharp, Version=1.31.1789.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+    <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\PdfSharp.dll</HintPath>
+      <HintPath>lib\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\PdfSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -85,6 +93,12 @@
     </Compile>
     <Compile Include="AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppSettingsDialog.designer.cs">
+      <DependentUpon>AppSettingsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Automap.cs" />
     <Compile Include="AutomapBar.cs">
@@ -100,6 +114,7 @@
       <DependentUpon>AutomapDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="AutomapSettings.cs" />
+    <Compile Include="BorderDashStyle.cs" />
     <Compile Include="Canvas.Automap.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,13 +143,27 @@
     <Compile Include="Element.cs" />
     <Compile Include="BoundList.cs" />
     <Compile Include="Export\CodeExporter.cs" />
+    <Compile Include="Export\HugoExporter.cs" />
     <Compile Include="Export\Inform6Exporter.cs" />
     <Compile Include="Export\TadsExporter.cs" />
+    <Compile Include="Export\ZilExporter.cs" />
+    <Compile Include="Extensions\ColorExtensions.cs" />
+    <Compile Include="Extensions\FileExtensions.cs" />
+    <Compile Include="Extensions\RoomExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TrizbortExtensions.cs" />
     <Compile Include="IAutomapCanvas.cs" />
     <Compile Include="IMoveable.cs" />
     <Compile Include="Export\Inform7Exporter.cs" />
     <Compile Include="ISizeable.cs" />
     <Compile Include="LineSegment.cs" />
+    <Compile Include="MapStatistics.cs" />
+    <Compile Include="MapStatisticsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapStatisticsView.Designer.cs">
+      <DependentUpon>MapStatisticsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Minimap.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,7 +181,19 @@
     <Compile Include="Numeric.cs" />
     <Compile Include="PathHelper.cs" />
     <Compile Include="Port.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Rect.cs" />
+    <Compile Include="Region.cs" />
+    <Compile Include="RegionSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegionSettings.Designer.cs">
+      <DependentUpon>RegionSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Smoothing.cs" />
     <Compile Include="TextBlock.cs" />
     <Compile Include="Vector.cs" />
@@ -170,6 +211,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppSettingsDialog.resx">
+      <DependentUpon>AppSettingsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AutomapBar.resx">
       <DependentUpon>AutomapBar.cs</DependentUpon>
@@ -189,6 +233,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MapStatisticsView.resx">
+      <DependentUpon>MapStatisticsView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Minimap.resx">
       <DependentUpon>Minimap.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +246,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegionSettings.resx">
+      <DependentUpon>RegionSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoomPropertiesDialog.resx">
       <DependentUpon>RoomPropertiesDialog.cs</DependentUpon>
@@ -212,7 +262,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <None Include="Setup\License.rtf" />
     <Compile Include="Drawing.cs" />
     <Compile Include="ResizeHandle.cs" />
     <Compile Include="Room.cs" />
@@ -234,6 +283,11 @@
     <Compile Include="XmlAttributeReader.cs" />
     <Compile Include="XmlElementReader.cs" />
     <Compile Include="XmlScribe.cs" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Trizbort_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -249,6 +303,9 @@
     <Content Include="Images\ToolStripBackground.png" />
     <Content Include="Images\ToolStripBackground2.png" />
     <Content Include="Map.ico" />
+    <Content Include="Revisions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Setup\Wizard4.bmp" />
   </ItemGroup>
   <ItemGroup>

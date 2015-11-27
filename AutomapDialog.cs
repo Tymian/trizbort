@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010 by Genstein
+    Copyright (c) 2010-2015 by Genstein and Jason Lautzenheiser.
 
     This file is (or was originally) part of Trizbort, the Interactive Fiction Mapper.
 
@@ -56,6 +56,8 @@ namespace Trizbort
                 settings.AssumeRoomsWithSameNameAreSameRoom = !m_verboseTranscriptCheckBox.Checked || m_roomsWithSameNameAreSameRoomCheckBox.Checked;
                 settings.GuessExits = m_guessExitsCheckBox.Checked;
                 settings.AddObjectCommand = m_addObjectCommandTextBox.Text;
+                settings.AddRegionCommand = m_addRegionCommandTextBox.Text;
+                settings.ContinueTranscript = m_startFromEndCheckBox.Checked;
                 return settings;
             }
             set
@@ -67,6 +69,8 @@ namespace Trizbort
                 m_roomsWithSameNameAreSameRoomCheckBox.Checked = m_roomsWithSameNameAreSameRoomCheckBox.Enabled && value.AssumeRoomsWithSameNameAreSameRoom;
                 m_guessExitsCheckBox.Checked = value.GuessExits;
                 m_addObjectCommandTextBox.Text = value.AddObjectCommand;
+                m_addRegionCommandTextBox.Text = value.AddRegionCommand;
+                m_startFromEndCheckBox.Checked = value.ContinueTranscript;
             }
         }
 
@@ -99,5 +103,6 @@ namespace Trizbort
             m_roomsWithSameNameAreSameRoomCheckBox.Enabled = m_verboseTranscriptCheckBox.Checked;
             m_roomsWithSameNameAreSameRoomCheckBox.Checked = !m_verboseTranscriptCheckBox.Checked;
         }
+
     }
 }

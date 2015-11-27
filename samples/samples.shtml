@@ -1,0 +1,73 @@
+<!--
+    This file is an index of sample files for Trizbort, the Interactive Fiction Mapper.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+-->
+<!--#include virtual="../header1.inc" -->
+<!--#include virtual="../css.inc" -->
+<!--#include virtual="../header2.inc" -->
+
+<!--
+    the include files above may change, and with it the header below and so forth. But until trizbort.com takes shape, they will be left for posterity.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trizbort 1.5+ sample files</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<p>The trizbort files below weren't picked with any special algorithm. However, they do attempt to show some ways that formatting and coloring can be used to create a map that can give hints a straightforward walkthrough can't organize, or maybe bring back memories of critical game parts. Maps can't take the place of walkthroughs, but they can often provide people a sense of what they might've missed, or even how big a game is.</p>
+
+<p>Individual links are to PDF files, since browsers may open XML as text. The entire collection of Trizbort files is <a href="samples.zip">here</a>.
+
+<table border=1>
+<tr>
+<td><a href="leadlight.pdf">Leadlight (Gamma)</a></td>
+<td>IFComp 2010</td>
+<td>A medium to large size game created with EAMON for an Apple II emulator, then ported to Inform 7 to use graphing capabilities. Along with region color, the map uses fills to show the existence of three types of things to find in the game: deathtraps (red), weapons (yellow) and secrets (blue). Some rooms have more than one type of thing, so colors are combined. Unfortunately, there's no good way to allow for having, say, two secrets. So the map can't do everything. But it captures where to look. Dashed borders indicate "powerball" rooms where an action can gain or lose more than one point. Dotted borders indicate rooms where you may gain two or more of a certain type of point.
+<tr>
+<td class="alt"><a href="luster.pdf">Luster</a></td>
+<td>IFComp 2011</td>
+<td>A small non-reciprocal maze as well as quest areas that give themselves naturally to regions. Two rooms are tagged to indicate a puzzle in one room helps with another. A one-way and dotted passage show the entrance/exit in a jail. Other formatting includes the color of gems that need to go on various pedestals near the end.</td>
+</tr>
+<td><a href="escape-from-summerland.pdf">Escape from Summerland</a></td>
+<td>IFComp 2012</td>
+<td>This game involved switching among three player characters, so color coding is used to denote where only the ghost can go, where only the monkey can go, and where the monkey and robot need to cooperate. It also features different names for the locations, since each PC sees it differently.</td>
+</tr>
+<td class="alt"><a href="spiral.pdf">Spiral</a></td>
+<td>IFComp 2012</td>
+<td>Another game from the same competition that features two player characters whose lives intersect at certain points only. A major goal of the game is to collect seven soul pieces for one of the players.</td>
+</tr>
+<tr>
+<td><a href="further.pdf">Further</a></td>
+<td>IFComp 2013</td>
+<td>Further was an IFComp 2013 entry that used colored text to create atmosphere, and the game map attempts to replicate that. Note that even though the author didn't intend to make the player suffer with puzzles, the map may spoil the game's impact if you haven't played and want to.</td>
+</tr>
+<tr>
+<td class="alt"><a href="slash-swamp.pdf">Slasher Swamp</a></td>
+<td>IFComp 2014</td>
+<td>Non-reciprocal exits, various regions, and several one-way exits to a certain room. One feature of the game was the necessity to search various objects, and those rooms are dashed. Numbers in the object space indicate the order to search.</td>
+<tr>
+<td><a href="gemstone-warrior.pdf">Gemstone Warrior</a></td>
+<td>Old Apple II game</tD>
+<td>Gemstone Warrior is an old Apple II action/strategy game where you go through a maze, rescue the gemstone, and get out. Trizbort's region properties and multiple exits seem suited to it.
+</tr>
+</table>

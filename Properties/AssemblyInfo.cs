@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010 by Genstein
+    Copyright (c) 2010-2015 by Genstein and Jason Lautzenheiser.
 
     This file is (or was originally) part of Trizbort, the Interactive Fiction Mapper.
 
@@ -29,12 +29,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Trizbort")]
+[assembly: AssemblyTitle("Trizbort 2015")]
 [assembly: AssemblyDescription("Interactive Fiction Mapper")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Genstein")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Trizbort")]
-[assembly: AssemblyCopyright("Copyright © 2010 by Genstein")]
+[assembly: AssemblyCopyright("Copyright © 2010-2015 by Genstein and Jason Lautzenheiser")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -56,5 +56,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.1.0")]
-[assembly: AssemblyFileVersion("1.2.1.0")]
+[assembly: AssemblyVersion("1.5.9.4")]
+[assembly: AssemblyFileVersion("1.5.9.4")]

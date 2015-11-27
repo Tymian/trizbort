@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010 by Genstein
+    Copyright (c) 2010-2015 by Genstein and Jason Lautzenheiser.
 
     This file is (or was originally) part of Trizbort, the Interactive Fiction Mapper.
 
@@ -28,7 +28,7 @@ using System.Text;
 
 namespace Trizbort
 {
-    internal struct LineSegment
+    public struct LineSegment
     {
         public LineSegment(Vector start, Vector end)
         {
@@ -212,7 +212,7 @@ namespace Trizbort
     /// <summary>
     /// The type of a line segment intersection.
     /// </summary>
-    internal enum LineSegmentIntersectType
+    public enum LineSegmentIntersectType
     {
         MidPointA,
         StartA,
@@ -222,7 +222,7 @@ namespace Trizbort
     /// <summary>
     /// A line segment intersection.
     /// </summary>
-    internal struct LineSegmentIntersect
+    public struct LineSegmentIntersect
     {
         public LineSegmentIntersect(LineSegmentIntersectType type, Vector pos)
         {

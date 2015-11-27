@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010 by Genstein
+    Copyright (c) 2010-2015 by Genstein and Jason Lautzenheiser.
 
     This file is (or was originally) part of Trizbort, the Interactive Fiction Mapper.
 
@@ -22,13 +22,9 @@
     THE SOFTWARE.
 */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Trizbort
 {
-    internal struct AutomapSettings
+    public struct AutomapSettings
     {
         public static AutomapSettings Default
         {
@@ -40,7 +36,9 @@ namespace Trizbort
                 settings.VerboseTranscript = true;
                 settings.AssumeRoomsWithSameNameAreSameRoom = false;
                 settings.GuessExits = true;
-                settings.AddObjectCommand = "see";
+                settings.AddObjectCommand = "tb see";
+                settings.AddRegionCommand = "tb region";
+                settings.ContinueTranscript = false;
                 return settings;
             }
         }
@@ -51,5 +49,7 @@ namespace Trizbort
         public bool AssumeRoomsWithSameNameAreSameRoom;
         public bool GuessExits;
         public string AddObjectCommand;
+        public string AddRegionCommand;
+        public bool ContinueTranscript;
     }
 }

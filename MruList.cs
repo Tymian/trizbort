@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010 by Genstein
+    Copyright (c) 2010-2015 by Genstein and Jason Lautzenheiser.
 
     This file is (or was originally) part of Trizbort, the Interactive Fiction Mapper.
 
@@ -29,7 +29,7 @@ using System.Text;
 
 namespace Trizbort
 {
-    class MruList : IEnumerable<string>
+    public class MruList : IEnumerable<string>
     {
         public const int MaxItems = 5;
 

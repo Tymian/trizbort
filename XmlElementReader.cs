@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010 by Genstein
+    Copyright (c) 2010-2015 by Genstein and Jason Lautzenheiser.
 
     This file is (or was originally) part of Trizbort, the Interactive Fiction Mapper.
 
@@ -33,7 +33,7 @@ namespace Trizbort
     /// <summary>
     /// Wrapper around an XmlElement for ease of access.
     /// </summary>
-    internal class XmlElementReader
+    public class XmlElementReader
     {
         public XmlElementReader()
         {

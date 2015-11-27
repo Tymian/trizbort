@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010 by Genstein
+    Copyright (c) 2010-2015 by Genstein and Jason Lautzenheiser.
 
     This file is (or was originally) part of Trizbort, the Interactive Fiction Mapper.
 
@@ -30,7 +30,7 @@ using System.Drawing;
 
 namespace Trizbort
 {
-    internal class XmlScribe : IDisposable
+    public class XmlScribe : IDisposable
     {
         private XmlScribe(XmlWriter writer)
         {
